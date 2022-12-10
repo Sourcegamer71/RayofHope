@@ -1,0 +1,325 @@
+@mixin neon() {
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+@mixin blue() {
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(58, 110, 206),
+    0 0 82px rgb(94, 185, 238),
+    0 0 92px rgb(27, 113, 226),
+    0 0 102px rgb(28, 158, 233),
+    0 0 151px rgb(43, 118, 231);
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+@mixin red() {
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(248, 58, 58),
+    0 0 82px rgb(253, 15, 15),
+    0 0 92px rgb(223, 85, 85),
+    0 0 102px rgb(151, 51, 51),
+    0 0 151px rgb(211, 104, 104);
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+$neonLight: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa,
+0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+body
+{
+    height: 100vh;
+}
+#gameStart
+{
+    background-color: black;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include neon();
+    height: 100vh;
+    position: relative;
+    animation-name: fadeBlack;
+    animation-duration: 4s;
+    animation-play-state: running;
+}
+@keyframes fadeBlack{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+#gameStart-button
+{
+    height: 120px;
+    width: 160px;
+    background-color: rgb(14, 39, 0);
+    border: 1px solid #0fa;
+    border-radius: 20px;
+    text-align: center;
+    color: #0fa;
+}
+#gameStart-button:hover{
+    height: 120px;
+    width: 160px;
+    background-color: rgb(50, 136, 0);
+    border: 1px solid rgb(21, 255, 0);
+    border-radius: 20px;
+    text-align: center;
+    color: rgb(0, 255, 0);
+}
+.gameStart-text
+{
+    
+    width: 70vw;
+    text-align: center;
+    margin: 0 auto;
+}
+.intro
+{
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    margin: 0 auto;
+}
+#game
+{
+    display: none;
+    background-color: black;
+    background-image: url(1.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include neon();
+    height: 100vh;
+    position: relative;
+    animation-name: gameStart;
+    animation-duration: 8s;
+}
+@keyframes gameStart
+{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#buttonNovel
+{
+    height: 140px;
+    width: 200px;
+    background-color: rgb(14, 39, 0);
+    @include neon();
+    border: 1px solid #0fa;
+    border-radius: 20px;
+    box-shadow: $neonLight;
+    text-align: center;
+}
+#buttonNovel:hover
+{
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(255, 243, 75),
+    0 0 82px rgb(234, 255, 114),
+    0 0 92px rgb(182, 255, 11),
+    0 0 102px rgb(255, 217, 3),
+    0 0 151px rgb(239, 255, 12);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(240, 255, 35), 0 0 82px rgb(255, 196, 0),
+0 0 92px rgb(251, 255, 27), 0 0 102px rgb(226, 228, 124), 0 0 151px rgb(241, 255, 116);
+}
+.buttonNovel-container
+{
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+#buttonNovel:active
+{
+    background-color: black;
+    box-shadow: none;
+    color: rgb(167, 167, 167);
+}
+
+#blue
+{
+    display: none;
+    height: 140px;
+    width: 200px;
+    background-color: rgb(16, 13, 59);
+    @include blue();
+    border: 1px solid rgb(0, 31, 206);
+    border-radius: 20px;
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(15, 115, 155), 0 0 82px rgb(16, 102, 230),
+    0 0 92px rgb(11, 112, 151), 0 0 102px rgb(64, 106, 245), 0 0 151px rgb(18, 71, 133);
+    text-align: center; 
+}
+#red
+{
+    display: none;
+    height: 140px;
+    width: 200px;
+    background-color: rgb(134, 0, 0);
+    @include red();
+    border: 1px solid rgb(158, 0, 0);
+    border-radius: 20px;
+    box-shadow: $neonLight;
+    text-align: center;
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(243, 68, 68), 0 0 82px rgb(219, 33, 33),
+    0 0 92px rgb(219, 102, 102), 0 0 102px rgb(241, 39, 39), 0 0 151px rgb(255, 45, 45);
+}
+#blue:hover
+{
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(84, 255, 241),
+    0 0 82px rgb(96, 236, 255),
+    0 0 92px rgb(153, 243, 255),
+    0 0 102px rgb(109, 245, 250),
+    0 0 151px rgb(91, 255, 255);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(66, 227, 255), 0 0 82px rgb(54, 228, 219),
+0 0 92px rgb(38, 248, 255), 0 0 102px rgb(28, 215, 240), 0 0 151px rgb(41, 226, 250);
+}
+#red:hover
+{
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(235, 99, 128),
+    0 0 82px rgb(192, 45, 106),
+    0 0 92px rgb(255, 166, 166),
+    0 0 102px rgb(185, 131, 138),
+    0 0 151px rgb(255, 110, 154);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(255, 12, 215), 0 0 82px rgb(255, 23, 166),
+0 0 92px rgb(219, 19, 79), 0 0 102px rgb(255, 22, 255), 0 0 151px rgb(255, 32, 236)
+}
+.interface
+{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 3vh;
+    width: 80vw;
+    
+}
+.charpters_container
+{
+    display: flex;
+    button
+    {
+        margin-right: 1vw;
+        height: 30px;
+        width: 70px;
+        background-color: rgb(35, 85, 6);
+        border: 1px solid rgb(117, 253, 63);
+        border-radius: 20px;
+        text-align: center;
+        color: rgb(117, 253, 63);
+        text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa;
+        box-shadow: 0 0 7px rgb(139, 231, 86), 0 0 10px rgb(112, 248, 85), 0 0 21px #fff, 0 0 42px #0fa;
+    }
+    button:disabled
+    {
+        background-color: rgb(14, 39, 0);
+        border: 1px solid rgb(54, 114, 62);
+        color: rgb(54, 114, 62);
+        text-shadow: none;
+        box-shadow: 0 0 7px rgb(44, 117, 1), 0 0 10px rgb(53, 138, 36), 0 0 21px #fff;
+    }
+    button:active
+    {
+        color: rgb(184, 224, 110);
+        background-color: rgb(28, 134, 1);
+    }
+    button:hover
+    {
+        text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(255, 243, 75),
+    0 0 82px rgb(234, 255, 114),
+    0 0 92px rgb(182, 255, 11),
+    0 0 102px rgb(255, 217, 3),
+    0 0 151px rgb(239, 255, 12);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(240, 255, 35), 0 0 82px rgb(255, 196, 0),
+0 0 92px rgb(251, 255, 27), 0 0 102px rgb(226, 228, 124), 0 0 151px rgb(241, 255, 116);
+    }
+}
+#exit
+{
+    margin-right: 1vw;
+    height: 70px;
+    width: 70px;
+    background-color: rgb(51, 1, 1);
+    border: 1px solid rgb(90, 26, 0);
+    border-radius: 0 30px 30px 0px;
+    text-align: center;
+    color: rgb(167, 167, 167);
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px rgb(255, 78, 78),
+    0 0 42px rgb(255, 0, 55);
+    box-shadow: 0 0 7px rgb(255, 8, 8), 0 0 10px rgb(139, 0, 0), 0 0 21px #fff, 0 0 42px rgb(238, 100, 100);
+}
+#exit:hover
+{
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(189, 0, 25),
+    0 0 82px rgb(248, 85, 85),
+    0 0 92px rgb(182, 255, 11),
+    0 0 102px rgb(255, 217, 3),
+    0 0 151px rgb(239, 255, 12);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(240, 255, 35), 0 0 82px rgb(255, 196, 0),
+0 0 92px rgb(255, 8, 8), 0 0 102px rgb(255, 8, 82), 0 0 151px rgb(255, 56, 56);
+}
+
+#text
+{
+    position: absolute;
+    top:35%;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+}
